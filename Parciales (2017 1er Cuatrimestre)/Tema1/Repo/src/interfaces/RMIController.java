@@ -1,6 +1,7 @@
 package interfaces;
 
 import dto.ProductoDTO;
+import exceptions.ProductoException;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -10,6 +11,6 @@ import java.rmi.RemoteException;
  */
 public interface RMIController extends Remote {
 
-    ProductoDTO obtenerProducto(long barcode) throws RemoteException;
+    ProductoDTO obtenerProducto(long barcode) throws RemoteException, ProductoException;
     void agregarProducto(ProductoDTO productoDTO) throws RemoteException;
 }

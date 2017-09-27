@@ -28,7 +28,7 @@ public class RMIController {
 
     }
 
-    public ProductoDTO getProductByBarcode(String barcode) throws RemoteException {
+    public ProductoDTO getProductByBarcode(String barcode) {
         return remoteController.getProductByBarcode(barcode);
     }
 

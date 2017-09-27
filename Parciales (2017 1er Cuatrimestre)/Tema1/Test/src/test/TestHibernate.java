@@ -1,9 +1,11 @@
 package test;
 
+import java.rmi.RemoteException;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import dto.ProductoDTO;
 import view.ProductoView;
 import controlador.Controlador;
 import dao.ProductoDAO;
@@ -13,7 +15,7 @@ public class TestHibernate {
 	public static void main(String[] args) {
 
 		/** recuperar un producto por codigo de barras */
-		ProductoView p = ProductoDAO.getInstancia().findProductoByCodigo(7790895000430l).toDTO();
+		ProductoDTO p = ProductoDAO.getInstancia().findProductoByCodigo(7790895000430l).toDTO();
 		System.out.println(p.getNombre());
 		if(p.getAditivos() != null){
 			System.out.println("Aditivos");
@@ -31,10 +33,10 @@ public class TestHibernate {
 
 		/** 
 		 * Cargar un nuevo producto con 3 aditivos y todos los componentes 
-		 * indicar un codigo de barras inexistente (tienen 13 dígitos)
+		 * indicar un codigo de barras inexistente (tienen 13 dï¿½gitos)
 		 * un producto y una marca (son dos cadenas de caracateres 
 		 * */
-		p = new ProductoView(9999999942095l, "Producto A", "Marca X");
+		p = new ProductoDTO(9999999942095l, "Producto A", "Marca X");
 		
 		/** Agregar tres aditivos de los existentes. debe ingresar la descripcion de los mismos */
 		p.setAditivo("Curcumina	");
@@ -56,7 +58,11 @@ public class TestHibernate {
 		p.setCoeficiente("mono", 10.10f);
 		p.setCoeficiente("poli", 10.10f);
 		p.setCoeficiente("porcion", 10.10f);
-		
-		Controlador.getInstancia().agregarProducto(p);
+
+		try {
+			Controlador.getInstancia().agregarProducto(p);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
 	}
 }

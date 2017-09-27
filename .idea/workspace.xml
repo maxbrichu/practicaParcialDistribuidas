@@ -6,7 +6,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parciales (2017 1er Cuatrimestre)/Tema1/Cliente/src/RMIController.java" afterPath="$PROJECT_DIR$/Parciales (2017 1er Cuatrimestre)/Tema1/Cliente/src/RMIController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parciales (2017 1er Cuatrimestre)/Tema1/Repo/src/interfaces/RMIController.java" afterPath="$PROJECT_DIR$/Parciales (2017 1er Cuatrimestre)/Tema1/Repo/src/interfaces/RMIController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parciales (2017 1er Cuatrimestre)/Tema1/Server/src/controlador/Controlador.java" afterPath="$PROJECT_DIR$/Parciales (2017 1er Cuatrimestre)/Tema1/Server/src/controlador/Controlador.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parciales (2017 1er Cuatrimestre)/Tema1/Server/src/negocio/Producto.java" afterPath="$PROJECT_DIR$/Parciales (2017 1er Cuatrimestre)/Tema1/Server/src/negocio/Producto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parciales (2017 1er Cuatrimestre)/Tema1/Test/Test.iml" afterPath="$PROJECT_DIR$/Parciales (2017 1er Cuatrimestre)/Tema1/Test/Test.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parciales (2017 1er Cuatrimestre)/Tema1/Test/src/test/TestHibernate.java" afterPath="$PROJECT_DIR$/Parciales (2017 1er Cuatrimestre)/Tema1/Test/src/test/TestHibernate.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />

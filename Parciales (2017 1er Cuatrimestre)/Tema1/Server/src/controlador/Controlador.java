@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import dto.ProductoDTO;
+import exceptions.ProductoException;
 import interfaces.RMIController;
 import view.ProductoView;
 import dao.AditivoDAO;
@@ -71,8 +72,12 @@ public class Controlador extends UnicastRemoteObject implements RMIController{
 		nuevo.saveMe();
 	}
 	
-	public ProductoDTO obtenerProducto(long codigoBarras)throws RemoteException {
-		return ProductoDAO.getInstancia().findProductoByCodigo(codigoBarras).toDTO();
+	public ProductoDTO obtenerProducto(long codigoBarras)throws RemoteException, ProductoException {
+		Producto producto = ProductoDAO.getInstancia().findProductoByCodigo(codigoBarras);
+		if (producto == null){
+			throw new ProductoException("No existe el producto con código de barra: " + codigoBarras);
+		}
+		return producto.toDTO();
 	}
 
 	public Componente findComponenteByDescripcion(String descripcion) throws ComponenteException{
