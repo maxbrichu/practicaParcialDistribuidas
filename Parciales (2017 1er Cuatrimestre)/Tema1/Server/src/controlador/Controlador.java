@@ -1,10 +1,14 @@
 package controlador;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import dto.ProductoDTO;
+import interfaces.RMIController;
 import view.ProductoView;
 import dao.AditivoDAO;
 import dao.ComponenteDAO;
@@ -16,24 +20,24 @@ import negocio.Componente;
 import negocio.Composicion;
 import negocio.Producto;
 
-public class Controlador {
+public class Controlador extends UnicastRemoteObject implements RMIController{
 
 	private static Controlador instancia;
 	private List<Componente> componentes;
 	private List<Aditivo> aditivos;
 	
-	private Controlador(){
-		 componentes = new ArrayList<Componente>();
-		 aditivos = new ArrayList<Aditivo>();
+	private Controlador() throws RemoteException {
+		componentes = new ArrayList<Componente>();
+		aditivos = new ArrayList<Aditivo>();
 	}
 	
-	public static Controlador getInstancia(){
+	public static Controlador getInstancia() throws RemoteException {
 		if(instancia == null)
 			instancia = new Controlador();
 		return instancia;
 	}
 	
-	public void agregarProducto(ProductoView producto){
+	public void agregarProducto(ProductoDTO producto)throws RemoteException {
 		
 		Producto nuevo = new Producto();
 		nuevo.setCodigoBarra(producto.getCodigoBarra());
@@ -67,7 +71,7 @@ public class Controlador {
 		nuevo.saveMe();
 	}
 	
-	public ProductoView obtenerProducto(long codigoBarras){
+	public ProductoDTO obtenerProducto(long codigoBarras)throws RemoteException {
 		return ProductoDAO.getInstancia().findProductoByCodigo(codigoBarras).toDTO();
 	}
 
@@ -87,5 +91,7 @@ public class Controlador {
 		else
 			return a;
 	}
+
+
 
 }

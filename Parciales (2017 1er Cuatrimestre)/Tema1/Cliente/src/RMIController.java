@@ -32,4 +32,8 @@ public class RMIController {
         return remoteController.getProductByBarcode(barcode);
     }
 
+    public void crearProducto(ProductoDTO productoDTO){
+        remoteController.crearProducto(productoDTO);
+    }
+
 }

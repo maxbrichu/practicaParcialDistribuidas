@@ -3,12 +3,13 @@ package interfaces;
 import dto.ProductoDTO;
 
 import java.rmi.Remote;
+import java.rmi.RemoteException;
 
 /**
  * Created on 27/09/2017.
  */
 public interface RMIController extends Remote {
 
-    ProductoDTO getProductByBarcode(String barcode);
-    void nuevoProducto(ProductoDTO productoDTO);
+    ProductoDTO obtenerProducto(long barcode) throws RemoteException;
+    void agregarProducto(ProductoDTO productoDTO) throws RemoteException;
 }

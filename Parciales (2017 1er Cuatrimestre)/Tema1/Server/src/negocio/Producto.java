@@ -1,10 +1,12 @@
 package negocio;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import dto.ProductoDTO;
 import view.ProductoView;
 import controlador.Controlador;
 import dao.ProductoDAO;
@@ -63,6 +65,8 @@ public class Producto {
 			resultado += (auxiliar.get(aux) - auxiliar.get(aux1)) * aux.getCoeficiente();
 		} catch (ComponenteException e) {
 			e.printStackTrace();
+		} catch (RemoteException e) {
+			e.printStackTrace();
 		}
 		return resultado;
 	}
@@ -118,12 +122,20 @@ public class Producto {
 		return composicion;
 	} 
 		
-	public ProductoView toDTO(){
+	/*public ProductoView toDTO(){
 		ProductoView aux = new ProductoView(codigoBarra, nombre, marca);
 		for(Aditivo a : aditivos)
 			aux.setAditivo(a.getDescripcion());
 		for(Composicion c : composicion)
 			aux.setCoeficiente(c.getComponente().getDescripcion(), c.getCantidad());
 		return aux; 
+	}*/
+	public ProductoDTO toDTO(){
+		ProductoDTO aux = new ProductoDTO(codigoBarra, nombre, marca);
+		for(Aditivo a : aditivos)
+			aux.setAditivo(a.getDescripcion());
+		for(Composicion c : composicion)
+			aux.setCoeficiente(c.getComponente().getDescripcion(), c.getCantidad());
+		return aux;
 	}
 }
