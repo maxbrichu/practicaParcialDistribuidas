@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import view.AditivoView;
-import view.ComponenteView;
 import view.ProductoView;
 import dao.AditivoDAO;
 import dao.ComponenteDAO;
