@@ -22,6 +22,7 @@ public class AditivoDAO {
 	}
 	
 	public List<Aditivo> getAll(){
+		// Cosas
 		List<Aditivo> resultado = new ArrayList<Aditivo>();
 		Aditivo a;
 		SessionFactory sf = HibernateUtil.getSessionFactory();
