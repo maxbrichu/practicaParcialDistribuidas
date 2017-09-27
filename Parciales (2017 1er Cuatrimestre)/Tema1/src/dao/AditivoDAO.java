@@ -22,11 +22,8 @@ public class AditivoDAO {
 	}
 	
 	public List<Aditivo> getAll(){
-<<<<<<< HEAD
-		//Godio power
-=======
 		// Cosas
->>>>>>> 3a10955c4d06212ccfc64a7553e452e60134f6d4
+		//asdasdasd
 		List<Aditivo> resultado = new ArrayList<Aditivo>();
 		Aditivo a;
 		SessionFactory sf = HibernateUtil.getSessionFactory();
