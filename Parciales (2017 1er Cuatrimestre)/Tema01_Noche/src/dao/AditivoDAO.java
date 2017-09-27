@@ -22,6 +22,7 @@ public class AditivoDAO {
 	}
 	
 	public List<Aditivo> getAll(){
+		//Godio power
 		List<Aditivo> resultado = new ArrayList<Aditivo>();
 		Aditivo a;
 		SessionFactory sf = HibernateUtil.getSessionFactory();
@@ -36,6 +37,9 @@ public class AditivoDAO {
 		s.getTransaction().commit();
 		s.close();
 		return resultado;
+
+		//poronga
+		//asdasd
 	}
 	
 	public Aditivo findByDescripcion(String descripcion){
