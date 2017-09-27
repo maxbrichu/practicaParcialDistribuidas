@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cc8db19-831b-4871-995a-eed9eb9686c3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parciales (2017 1er Cuatrimestre)/Tema01_Noche/src/dao/AditivoDAO.java" afterPath="$PROJECT_DIR$/Parciales (2017 1er Cuatrimestre)/Tema01_Noche/src/dao/AditivoDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parciales (2017 1er Cuatrimestre)/Tema1/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Parciales (2017 1er Cuatrimestre)/Tema1/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -422,12 +421,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1506529529269</updated>
-      <workItem from="1506529530816" duration="547000" />
+      <workItem from="1506529530816" duration="599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="547000" />
+    <option name="totallyTimeSpent" value="599000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="860" extended-state="0" />
