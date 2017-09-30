@@ -3,6 +3,7 @@ package controlador;
 import java.util.ArrayList;
 import java.util.List;
 
+import dao.ResultadoDAO;
 import view.AutoView;
 import view.ResultadoView;
 

@@ -2,16 +2,13 @@ package dao;
 
 import entities.ResultadoEntity;
 import hibernate.HibernateUtil;
-import negocio.Resultado;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import view.ResultadoView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created on 27/09/2017.
- */
 public class ResultadoDAO {
     private static ResultadoDAO instancia;
 
@@ -23,21 +20,34 @@ public class ResultadoDAO {
         return instancia;
     }
 
-    public List<Resultado> getAll(){
-        List<Resultado> resultado = new ArrayList<Resultado>();
+    public List<ResultadoView> getAll2(){
+        ArrayList<ResultadoView> views = new ArrayList<>();
+
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session s = sf.openSession();
-        s.beginTransaction();
-        List<ResultadoEntity> resultados = (List<ResultadoEntity>) s.createQuery("from ResultadoEntity order by descripcion").list();
+        List<ResultadoEntity> resultados = (List<ResultadoEntity>) s.createQuery("from ResultadoEntity where posicion = 1").list();
+
         for(ResultadoEntity re : resultados)
-            resultado.add(toNegocio(re));
-        s.getTransaction().commit();
+            views.add(re.toView());
+
         s.close();
-        return resultado;
+
+        return views;
     }
 
-    public Resultado toNegocio(ResultadoEntity obtenido){
-        return new Resultado(obtenido.getAuto(), obtenido.getCircuito().toView(), obtenido.getPosicion());
+    public List<ResultadoView> getAll(){
+        ArrayList<ResultadoView> views = new ArrayList<>();
 
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Session s = sf.openSession();
+        List<ResultadoEntity> resultados = (List<ResultadoEntity>) s.createQuery("from AutoEntity where AutoEntity.motor.marca.identificador = AutoEntity.chasis.marca.identificador").list();
+
+        for(ResultadoEntity re : resultados)
+            views.add(re.toView());
+
+        s.close();
+
+        return views;
     }
+
 }

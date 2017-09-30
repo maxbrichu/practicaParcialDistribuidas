@@ -3,10 +3,20 @@ package entities;
 import java.util.Date;
 import view.CircuitoView;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class CircuitoEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer numero;
+
 	private String circuito;
+
 	private Date fechaCarrera;
 	
 	public CircuitoEntity(Integer numero, String circuito, Date fechaCarrera) {

@@ -2,9 +2,7 @@ package entities;
 
 import view.AutoView;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name= "autos")
@@ -13,10 +11,13 @@ public class AutoEntity {
 	@Id
 	private Integer numeroAuto;
 
+	@ManyToOne
 	private ChasisEntity chasis;
 
+	@ManyToOne
 	private MotorEntity motor;
 
+	@ManyToOne
 	private EscuderiaEntity escuderia;
 	
 	public AutoEntity(Integer nuemroAuto, ChasisEntity chasis, MotorEntity motor, EscuderiaEntity escuderia) {

@@ -2,15 +2,22 @@ package entities;
 
 import view.ResultadoView;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name ="resultado")
+@Table(name ="resultados")
 public class ResultadoEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Integer identificador;
+
+	@ManyToOne
 	private AutoEntity auto;
+
+	@ManyToOne
 	private CircuitoEntity circuito;
+
 	private int posicion;
 	
 	public ResultadoEntity(AutoEntity auto, CircuitoEntity circuito, int posicion) {

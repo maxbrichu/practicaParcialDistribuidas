@@ -1,6 +1,6 @@
 package hibernate;
 
-import entities.AutoEntity;
+import entities.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -15,7 +15,15 @@ public class HibernateUtil {
         try
         {
             Configuration config = new Configuration();
+
+            config.addAnnotatedClass(ChasisEntity.class);
+            config.addAnnotatedClass(EscuderiaEntity.class);
+            config.addAnnotatedClass(MarcaEntity.class);
+            config.addAnnotatedClass(MotorEntity.class);
             config.addAnnotatedClass(AutoEntity.class);
+            config.addAnnotatedClass(ResultadoEntity.class);
+            config.addAnnotatedClass(CircuitoEntity.class);
+
             sessionFactory = config.buildSessionFactory();
         }
         catch (Throwable ex)

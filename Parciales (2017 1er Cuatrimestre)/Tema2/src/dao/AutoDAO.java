@@ -17,8 +17,5 @@ public class AutoDAO {
         return instancia;
     }
 
-    public Auto toNegocio(AutoEntity autoEntity){
-        Auto aux = new Auto(autoEntity.getNuemroAuto(),autoEntity.getChasis(), autoEntity.getMotor(), autoEntity.getEscuderia());
 
-    }
 }

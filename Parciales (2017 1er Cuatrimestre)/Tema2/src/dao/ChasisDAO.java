@@ -18,8 +18,5 @@ public class ChasisDAO {
         return instancia;
     }
 
-    public Chasis toNegocio(AutoEntity chasisEntity){
-        Chasis aux = new Chasis();
 
-    }
 }

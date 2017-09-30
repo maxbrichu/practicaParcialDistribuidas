@@ -2,10 +2,18 @@ package entities;
 
 import view.ChasisView;
 
+import javax.persistence.*;
+
+@Entity
 public class ChasisEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer numero;
+
 	private String descripcion;
+
+	@ManyToOne
 	private MarcaEntity marca;
 	
 	public ChasisEntity(){ }

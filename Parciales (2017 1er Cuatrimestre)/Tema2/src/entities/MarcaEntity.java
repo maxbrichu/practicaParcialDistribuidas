@@ -2,9 +2,18 @@ package entities;
 
 import view.MarcaView;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class MarcaEntity {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer numero;
+
 	private String descripcion;
 	
 	public MarcaEntity(Integer numero, String descripcion) {

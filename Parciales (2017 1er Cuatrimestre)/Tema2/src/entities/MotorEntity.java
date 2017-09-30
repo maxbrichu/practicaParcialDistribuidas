@@ -2,11 +2,21 @@ package entities;
 
 import view.MotorView;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "motores")
 public class MotorEntity {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer numero;
+
 	private String descripcion;
+
 	private int cilindrada;
+
+	@ManyToOne
 	private MarcaEntity marca;
 	
 	public MotorEntity(Integer numero, String descripcion, int cilindrada, MarcaEntity marca) {
